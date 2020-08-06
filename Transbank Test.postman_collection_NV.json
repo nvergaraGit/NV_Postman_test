@@ -1,0 +1,75 @@
+{
+	"info": {
+		"_postman_id": "8259968a-c38d-4f20-9ac0-919fa235ea0e",
+		"name": "NV",
+		"description": "test add user",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/people/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "caf04362-1151-44ff-998a-5b93a76915e0",
+						"exec": [
+							"pm.test(\"Usuario creado encontrado: \" + pm.response.text(), function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Nelson\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"firstMame\": \"Gabriel\",\n        \"lastName\": \"Fuentes\",\n        \"age\": 11\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/people/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"people",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/people/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"firstMame\": \"Nelson\",\n        \"lastName\": \"Vergara\",\n        \"age\": 41\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5000/people/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"people",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
